@@ -22,12 +22,10 @@ class Pipeline:
         print(f"on_startup:{__name__}")
         
         # Start openlit collecting metrics
-        OTEL_ENDPOINT = "http://<my-ip>:4318"
-        PRICING_JSON = "/path/to/openlit_pricing.json"
+        OTEL_ENDPOINT = "http://localhost:4318"
         openlit.init(
             otlp_endpoint=OTEL_ENDPOINT,
-            pricing_json=PRICING_JSON,
-            collect_gpu_stats=True
+            collect_gpu_stats=False
             )
         pass
 
